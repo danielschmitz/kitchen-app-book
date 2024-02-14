@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { RouterView } from 'vue-router'
+import { RouterView, RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -9,9 +9,9 @@ import { RouterView } from 'vue-router'
         <li><strong>Kitchen App</strong></li>
       </ul>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><RouterLink to="/">Home</RouterLink></li>
         <li><a href="#">Products</a></li>
-        <li><a href="#">Categories</a></li>
+        <li><RouterLink to="/categories">Categories</RouterLink></li>
       </ul>
     </nav>
     <RouterView />
