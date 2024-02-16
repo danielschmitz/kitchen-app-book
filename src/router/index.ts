@@ -13,7 +13,13 @@ const router = createRouter({
     {
       path: '/categories',
       name: 'categories',
-      component: CategoriesView
+      component: CategoriesView,
+      children: [
+        {
+          path: '',
+          component: () => import('../views/categories/ListView.vue')
+        }
+      ]
     },
     {
       path: '/about',

@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
 <template>
   <article>
     <header>Categories</header>
-    Content...
+    <RouterView />
   </article>
 </template>
