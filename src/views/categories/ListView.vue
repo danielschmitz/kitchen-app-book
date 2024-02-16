@@ -16,4 +16,7 @@ onMounted(async () => {
       </li>
     </ul>
   </div>
+  <footer>
+    <router-link to="/categories/create"><button>New</button></router-link>
+  </footer>
 </template>
