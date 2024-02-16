@@ -11,7 +11,7 @@ const save = async () => {
     //console.log(form.value)
     const result = await CategoryService.create(form.value)
     console.log("category created", result)
-    router.push("/categories");
+    router.push("/categories")
 }
 
 </script>
