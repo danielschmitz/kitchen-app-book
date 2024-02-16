@@ -17,10 +17,12 @@ const router = createRouter({
       children: [
         {
           path: '',
+          name: 'ListCategories',
           component: () => import('../views/categories/ListView.vue')
         },
         {
           path: 'create',
+          name: 'CreateCategory',
           component: () => import('../views/categories/CreateView.vue')
         }
       ]
