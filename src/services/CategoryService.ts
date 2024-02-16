@@ -1,8 +1,13 @@
+import HttpService from './HttpService'
 
-const apiUrl = "http://localhost:3000"
+export interface Category {
+    id: number
+    name: string
+  }
 
-const CategoryService = {
-    getAll: async () => await fetch(apiUrl+'/categories')
+const URI = '/categories'
+
+export const CategoryService = {
+  getAll: async (): Category[] => (await HttpService.get(URI)).data,
 }
 
-export default CategoryService
