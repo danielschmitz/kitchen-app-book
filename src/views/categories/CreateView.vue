@@ -7,10 +7,14 @@ const form = ref<Category>({
   name: ''
 })
 
+const loading = ref<boolean>(false)
+
 const save = async () => {
     //console.log(form.value)
+    loading.value = true
     const result = await CategoryService.create(form.value)
     console.log("category created", result)
+    loading.value = false
     router.push("/categories")
 }
 
@@ -25,6 +29,9 @@ const save = async () => {
   </form>
   <footer>
     <router-link to="/categories"><button class="outline">Back</button></router-link>
-    <button @click="save()">Save</button>
+    <button 
+    :aria-busy="loading"
+    :disabled="loading"
+    @click="save()">Save</button>
   </footer>
 </template>

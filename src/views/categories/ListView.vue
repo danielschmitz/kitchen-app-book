@@ -3,14 +3,18 @@ import { onMounted, ref } from 'vue'
 import { CategoryService, type Category } from '../../services/CategoryService'
 
 const categories = ref<Category[]>()
+const loading = ref<boolean>(false)
 
 onMounted(async () => {
+  loading.value = true;
   categories.value = await CategoryService.getAll()
+  loading.value = false;
 })
 </script>
 <template>
   <div>
-    <ul>
+    <progress v-if="loading" />  
+    <ul v-else>
       <li v-for="category in categories" :key="category.id">
         {{ category.name }}
       </li>
