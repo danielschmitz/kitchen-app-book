@@ -16,7 +16,7 @@ onMounted(async () => {
     <progress v-if="loading" />  
     <ul v-else>
       <li v-for="category in categories" :key="category.id">
-        {{ category.name }}
+        <router-link :to="`/categories/edit/${category.id}`">{{ category.name }}</router-link>
       </li>
     </ul>
   </div>
