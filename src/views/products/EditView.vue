@@ -6,7 +6,9 @@ import { useRoute } from 'vue-router'
 
 const form = ref<Product>({
   id: 0,
-  name: ''
+  name: '',
+  supplier: '',
+  categoryId: 0
 })
 
 const route = useRoute()

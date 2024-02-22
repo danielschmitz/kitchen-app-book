@@ -13,12 +13,25 @@ onMounted(async () => {
 </script>
 <template>
   <div>
-    <progress v-if="loading" />  
-    <ul v-else>
-      <li v-for="product in products" :key="product.id">
-        <router-link :to="`/products/edit/${product.id}`">{{ product.name }}</router-link>
-      </li>
-    </ul>
+    <progress v-if="loading" />
+    <table v-else>
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Product</th>
+          <th scope="col">Supplier</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="product in products" :key="product.id">
+          <th>{{ product.id }}</th>
+          <td>{{ product.name }}</td>
+          <td>{{ product.supplier }}</td>
+          <td>{{ product.category?.name }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <footer>
     <router-link to="/products/create"><button>New</button></router-link>
