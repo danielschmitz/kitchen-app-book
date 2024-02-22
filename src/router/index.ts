@@ -33,6 +33,28 @@ const router = createRouter({
       ]
     },
     {
+      path: '/products',
+      name: 'products',
+      component: () => import('../views/products/IndexView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'ListProduct',
+          component: () => import('../views/products/ListView.vue')
+        },
+        {
+          path: 'create',
+          name: 'CreateProduct',
+          component: () => import('../views/products/CreateView.vue')
+        },
+        {
+          path: 'edit/:id',
+          name: 'EditProduct',
+          component: () => import('../views/products/EditView.vue')
+        }
+      ]
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

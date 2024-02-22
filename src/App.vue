@@ -10,7 +10,7 @@
       </ul>
       <ul>
         <li><RouterLink to="/">Home</RouterLink></li>
-        <li><a href="#">Products</a></li>
+        <li><RouterLink to="/products">Products</RouterLink></li>
         <li><RouterLink to="/categories">Categories</RouterLink></li>
       </ul>
     </nav>
