@@ -2,7 +2,7 @@
 import router from '@/router'
 import { ProductService, type Product } from '@/services/ProductService'
 import { ref, reactive, onMounted } from 'vue'
-import { Category, CategoryService } from '../../services/CategoryService';
+import { type Category, CategoryService } from '../../services/CategoryService';
 
 const form = ref<Product>({
   name: '',
