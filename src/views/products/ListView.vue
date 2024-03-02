@@ -21,6 +21,7 @@ onMounted(async () => {
           <th scope="col">Product</th>
           <th scope="col">Supplier</th>
           <th scope="col">Category</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +30,7 @@ onMounted(async () => {
           <td>{{ product.name }}</td>
           <td>{{ product.supplier }}</td>
           <td>{{ product.category?.name }}</td>
+          <td><router-link :to="`/products/edit/${product.id}`">Edit</router-link></td>
         </tr>
       </tbody>
     </table>
